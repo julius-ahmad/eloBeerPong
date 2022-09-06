@@ -20,7 +20,7 @@ def chart_plot(data: typing.List[typing.Tuple[float, float]], title: str, x_labe
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.legend(loc="lower left")
-    directory = 'rankProgress/'
+    directory = 'rank_progress/'
     if not os.path.exists(directory):
         os.makedirs(directory)
     plt.savefig(os.path.join(directory, f'{title}.png'), dpi=300)

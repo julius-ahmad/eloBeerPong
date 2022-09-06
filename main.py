@@ -1,5 +1,5 @@
-import GraphDrawer
-import DataHandler
+import graph_drawer
+import data_handler
 import math
 DEFAULT_ELO = 1000
 K_VALUE = 32
@@ -71,7 +71,7 @@ def expected_score(Ra, Rb):
 
 
 if __name__ == '__main__':
-    games = DataHandler.read_data()
+    games = data_handler.read_data()
     timeline = compile_elos(games)
     players = list(timeline[0].keys())
     data = []
@@ -79,5 +79,5 @@ if __name__ == '__main__':
     for player in players:
         for i in range(len(timeline)):
             data.append((i, timeline[i][player]))
-        GraphDrawer.draw_graph(data, player)
+        graph_drawer.draw_graph(data, player)
         data.clear()
